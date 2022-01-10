@@ -1,0 +1,59 @@
+<div *ngIf="admin" class="container">
+
+    <h3> Lista de Atracciones </h3><br>
+
+    <button type="button" class="btn btn-primary" (click)= "addAtracion()"> Añadir Atracción </button>
+
+    <div *ngIf="addA" class="container">
+        <br>
+        <div class="form-group col-xs-12">
+            <input type="text" name="addA" id="addA" class="form-control input-sm floatlabel" placeholder="Pos Atracción" formControlName="idA">
+        </div>
+        <br>
+
+        <button type="button" class="btn btn-primary" (click)= "addIDAttraction()"> Add Attraction </button>
+    </div>
+
+    <table class="table table-hove r">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Posición</th>
+            <th scope="col"> Eliminar </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let atraction of attractions">
+            <th scope="row">{{atraction.id}}</th> <!-- Pillar el ID -->
+            <td>{{atraction.pos}}</td>
+            <td><button type="button" class="btn btn-primary" (click)= "deleteAtracion()"> X </button></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3> Lista de Usuarios </h3><br>
+
+    <table class="table table-hove r">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col"> EliminarUsr </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let visitor of visitors">
+            <th scope="row">{{visitor.id}}</th>
+            <td>{{visitor.name}}</td>
+            <td><button type="button" class="btn btn-primary" (click)= "deleteClick()"> X </button></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<div *ngIf="!admin" class="container">
+
+    <h4> Forbidden </h4>
+
+</div>
