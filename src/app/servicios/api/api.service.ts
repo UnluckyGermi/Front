@@ -3,6 +3,7 @@ import { LoginI } from '../../modelos/login.interface';
 import { ResponseI } from '../../modelos/response.interface';
 import { MapaI } from '../../modelos/mapa.interface';
 import { AttractionI } from '../../modelos/attractions.interface';
+import { ADDAttractionI } from '../../modelos/addattractions.interface';
 import { VisitorI } from '../../modelos/visitor.interface';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -62,17 +63,16 @@ export class ApiService {
     return this.http.get<AttractionI[]>(dir, {headers: this.httpheaders});
   }
 
-  addAttractions():Observable<AttractionI>{
+  addAttractions(form: ADDAttractionI):Observable<string>{
     let url = this.url_engine + "attractions";
-    console.log(localStorage.getItem("idA"));
+    //console.log(localStorage.getItem("idA"));
     console.log(url);
-    return this.http.post<VisitorI>(url, {headers: this.httpheaders});
+    return this.http.post<string>(url, form, {headers: this.httpheaders});
   }
 
-  deleteAttractions():Observable<AttractionI>{
-    let url = this.url_engine + "attractions/" + localStorage.getItem("idA");
-    console.log(localStorage.getItem("idA"));
+  deleteAttractions(id: number):Observable<string>{
+    let url = this.url_engine + "attractions/" + id;
     console.log(url);
-    return this.http.delete<VisitorI>(url, {headers: this.httpheaders});
+    return this.http.delete<string>(url, {headers: this.httpheaders});
   }
 }

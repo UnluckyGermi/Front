@@ -26,18 +26,26 @@ export class MapaComponent implements OnInit {
         this.inMap = true;
         
         for(let i = 0; i < map.length; i++){
+
           /**let newName = "";
           newName = map[i];
           let len = newName.length;
+          console.log(newName)
+          console.log(len)
 
           if(true){
             console.log(len)
             console.log(newName)
             console.log("ALERTA")
+            this.mapa2D[i] = newName[0];
           }
           else{
             this.mapa2D[i] = map[i];
           }**/
+
+
+
+
           this.mapa2D[i] = map[i];
         }
         console.log(this.mapa2D)

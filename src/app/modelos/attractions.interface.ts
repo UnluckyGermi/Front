@@ -1,4 +1,4 @@
 export interface AttractionI{
-    id: string;
+    id: number;
     pos: number;
 }

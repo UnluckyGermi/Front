@@ -6,12 +6,14 @@
 
     <div *ngIf="addA" class="container">
         <br>
-        <div class="form-group col-xs-12">
-            <input type="text" name="addA" id="addA" class="form-control input-sm floatlabel" placeholder="Pos Atracción" formControlName="idA">
-        </div>
+        <form [formGroup]="AttractionForm" (ngSubmit)="addPosAttraction(AttractionForm.value)">
+            <div class="form-group col-xs-12">
+                <input type="text" name="addA" id="addA" class="form-control input-sm floatlabel" placeholder="Pos Atracción" formControlName="pos">
+            </div>
+            <br>
+            <input type="submit" value="Add Attraction" class="btn btn-info btn-block">
+        </form>
         <br>
-
-        <button type="button" class="btn btn-primary" (click)= "addIDAttraction()"> Add Attraction </button>
     </div>
 
     <table class="table table-hove r">
@@ -26,7 +28,7 @@
         <tr *ngFor="let atraction of attractions">
             <th scope="row">{{atraction.id}}</th> <!-- Pillar el ID -->
             <td>{{atraction.pos}}</td>
-            <td><button type="button" class="btn btn-primary" (click)= "deleteAtracion()"> X </button></td>
+            <td><button type="button" class="btn btn-primary" (click)= "deleteAtracion(atraction.id)"> X </button></td>
         </tr>
         </tbody>
     </table>
