@@ -32,6 +32,8 @@ export class RegistroComponent implements OnInit {
   onRegistry(form: RegistryI){
     this.api.newRegistry(form).subscribe(
       data => {
+        localStorage.setItem("name", form.name);
+
         this.router.navigate(['login']);
       },
 

@@ -4,5 +4,4 @@ export interface VisitorI{
     password: string;
     pos: number;
     admin: boolean;
-    //atracctions: number;
 }

@@ -8,6 +8,7 @@ import { VisitorI } from '../../modelos/visitor.interface';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { RegistryI } from 'src/app/modelos/registry.interface';
+import { PerfilI } from 'src/app/modelos/perfil.interface';
 
 
 @Injectable({
@@ -34,6 +35,11 @@ export class ApiService {
     return this.http.post(dir, form, {responseType:'text'});
   }
 
+  sendChangues(form: PerfilI):Observable<string>{
+    let dir = this.url_engine + "visitors/" + localStorage.getItem("id");
+    return this.http.put(dir, form, {responseType:'text'});
+  }
+
   move(dir: string):Observable<any>{
     let url = this.url_engine + "visitors/" + localStorage.getItem("id") + "/" + dir;
     console.log(localStorage.getItem("id"));
@@ -44,6 +50,11 @@ export class ApiService {
   getMap():Observable<any>{
     let dir_map = this.url_engine + "map";
     return this.http.get(dir_map, {headers: this.httpheaders});
+  }
+
+  getWeather():Observable<any>{
+    let dir_clima = this.url_engine + "weather";
+    return this.http.get(dir_clima, {headers: this.httpheaders})
   }
 
   getVisitors():Observable<VisitorI[]>{ //Se supone que son los usuarios registrados.

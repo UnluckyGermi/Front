@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
         let token:string = data;
         localStorage.setItem("token", token);
         localStorage.setItem("id", form.id);
+        localStorage.setItem("contraseña", form.password);
         
         this.router.navigate(['map']);
       },
