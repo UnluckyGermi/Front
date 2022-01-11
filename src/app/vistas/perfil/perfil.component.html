@@ -33,14 +33,14 @@
                         <form [formGroup]="UpdateForm" (ngSubmit)="ProfileChangue(UpdateForm.value)">
                             <div class="row">
                                 <div class="form-group col-xs-12">
-                                    <input type="text" name="NEWname" id="NEWname" class="form-control input-sm floatlabel" placeholder="Nuevo Nombre" formControlName="new_name">
+                                    <input type="text" name="NEWname" id="NEWname" class="form-control input-sm floatlabel" placeholder="Nuevo Nombre" formControlName="name">
                                 </div>
                                  <div class="form-group col-xs-12">
-                                    <input type="password" name="NEWpassword" id="NEWpassword" class="form-control input-sm floatlabel" placeholder="Nueva Contraseña" formControlName="new_password">
+                                    <input type="password" name="NEWpassword" id="NEWpassword" class="form-control input-sm floatlabel" placeholder="Nueva Contraseña" formControlName="password">
     			    		    </div>
                                 <div class="form-group col-xs-12">
-                                    <input type="password" name="NEWpassword2" id="NEWpassword2" class="form-control input-sm floatlabel" placeholder="Repetir Contraseña" formControlName="new_password2">
-                                </div>
+                                    <input type="password" name="NEWpassword2" id="NEWpassword2" class="form-control input-sm floatlabel" placeholder="Repetir Contraseña" formControlName="password2">
+    			    		    </div>
                             </div>
                             <input type="submit" value="Guardar" class="btn btn-info btn-block">
                         </form>                

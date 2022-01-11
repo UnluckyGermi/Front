@@ -37,7 +37,7 @@ export class ApiService {
 
   sendChangues(form: PerfilI):Observable<string>{
     let dir = this.url_engine + "visitors/" + localStorage.getItem("id");
-    return this.http.put(dir, form, {responseType:'text'});
+    return this.http.put<string>(dir, form, {headers: this.httpheaders});
   }
 
   move(dir: string):Observable<any>{
@@ -52,9 +52,9 @@ export class ApiService {
     return this.http.get<string[]>(dir_map, {headers: this.httpheaders});
   }
 
-  getWeather():Observable<any>{
+  getWeather():Observable<string[]>{
     let dir_clima = this.url_engine + "weather";
-    return this.http.get(dir_clima, {headers: this.httpheaders})
+    return this.http.get<string[]>(dir_clima, {headers: this.httpheaders})
   }
 
   getVisitors():Observable<VisitorI[]>{ //Se supone que son los usuarios registrados.

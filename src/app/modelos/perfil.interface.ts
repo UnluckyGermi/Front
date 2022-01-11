@@ -1,6 +1,5 @@
 export interface PerfilI{
-    id: string;
-    NEWname: string;
-    NEWpassword: string;
-    NEWpassword2: string;
+    name: string;
+    password: string;
+    password2: string;
 }

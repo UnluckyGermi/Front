@@ -13,6 +13,7 @@ export class MapaComponent implements OnInit {
 
   inMap: boolean = false;
   mapa2D: string[] = [];
+  mapaTemperaturas: string[] = [];
 
   pos: number = -1;
 
@@ -35,6 +36,18 @@ export class MapaComponent implements OnInit {
           }
           this.mapa2D[i] = map[i].charAt(0).toUpperCase();
         }
+      }, 
+      error => {
+        let err:string = error.status;
+        console.log(err)
+      }
+    )
+
+    this.api.getWeather().subscribe(
+      data => {
+        this.mapaTemperaturas = data;
+        
+        
       }, 
       error => {
         let err:string = error.status;
@@ -94,4 +107,6 @@ export class MapaComponent implements OnInit {
   goAdmin(): void{
     this.router.navigate(['admin']);
   }
+
+
 }

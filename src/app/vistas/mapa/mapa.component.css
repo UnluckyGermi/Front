@@ -28,7 +28,7 @@ body{
 .celda{
   display: flex;
   vertical-align: center;
-  font-size: 2.2vh;
+  font-size: 2vh;
   align-items: center;
   width: 3.98vh;
   height: 3.98vh;
@@ -39,6 +39,14 @@ body{
   justify-content: center;
   align-content: center;
   text-align: center;
+}
+
+.temp{
+  position: absolute;
+  font-size: 1vh;
+  float: right;
+  margin-left: 1.5vh;
+  margin-top: 2.5vh;
 }
 
 .buttons{

@@ -1,14 +1,18 @@
 <app-header></app-header>
 <body>
+
   <div class="map">
 
       <div class="celda" *ngFor="let element of mapa2D; let i = index">
         <div *ngIf="element != null"></div>
-        <div style="color:red; font-weight: bold; font-size: 3vh;"*ngIf="i == pos">
+        <div style="color:red; font-weight: bold; font-size: 2.5vh;"*ngIf="i == pos">
           X
         </div>
         <div *ngIf="i != pos">
           {{element}}
+        </div>
+        <div class="temp">
+          {{mapaTemperaturas[i]}}ºC
         </div>
       </div>
       
