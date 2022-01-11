@@ -3,6 +3,15 @@
     padding: 0;
 }
 
+.head{
+    display: flex;
+    justify-content: center;
+}
+
+.title{
+    justify-content: center;
+    margin-left: 2vh;
+}
 body{
     background-color: #2a282c;
 }

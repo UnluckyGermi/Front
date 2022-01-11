@@ -1,57 +1,95 @@
+
+
 body{
-    /* Safari 4-5, Chrome 1-9 */
-      background: -webkit-gradient(radial, center center, 0, center center, 460, from(#1a82f7), to(#2F2727));
-  
-    /* Safari 5.1+, Chrome 10+ */
-      background: -webkit-radial-gradient(circle, #1a82f7, #2F2727);
-  
-    /* Firefox 3.6+ */
-      background: -moz-radial-gradient(circle, #1a82f7, #2F2727);
-  
-    /* IE 10 */
-      background: -ms-radial-gradient(circle, #1a82f7, #2F2727);
-      height:600px;
-  }
-  
-  .centered-form{
-      margin-top: 60px;
-  }
-  
-  .centered-form .panel{
-      background: rgba(255, 255, 255, 0.8);
-      box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  align-content: center;
+  vertical-align: center;
+  background-color:tan;
+  height: 97vh;
+}
+.map{
+  background-color:lightgray;
+  width: 80vh;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: repeat(20, auto);
+  border-radius: 2px;
+  border-style: solid;
+}
+#centrarBotones{
+  width: 125px;
+  height: 125px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.celda{
+  display: flex;
+  vertical-align: center;
+  font-size: 2.2vh;
+  align-items: center;
+  width: 3.98vh;
+  height: 3.98vh;
+  padding: 0;
+  margin: 0;
+  border-style: dotted;
+  border-width: 1px;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
 
-  .container {
-    display: grid;
-    grid-template-columns: 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px;
-  }
+.buttons{
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 20px;
+  background-color:tomato;
+  padding: 3vh;
+  padding-top: 3.25vh;
+  display: flex;
+  flex-direction: column;
+  width: 30vh;
+  margin-left: 10vh;
+  height: 30vh;
+  border-style: dotted;
 
-  td {
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-    font-size: 8px;
-    text-align: center;
-    font-weight: bold;
-    border: 1px solid rgb(0, 0, 0);
-    }
-    
-    tr:nth-of-type(1) td:nth-of-type(2),
-    tr:nth-of-type(3) td:nth-of-type(2) {
-    width: 200px
-    }
-    
-    tr:nth-of-type(2) td {
-    height: 200px
-    }
-    
-    tr:nth-of-type(2) td:nth-of-type(odd){
-    writing-mode: vertical-rl;
-  }
-  
-  label.label-floatlabel {
-      font-weight: bold;
-      color: #46b8da;
-      font-size: 11px;
-  }
+}
+
+.button{
+  display: inline-block;
+  vertical-align: center;
+  font-size: 3vh;
+  color: aliceblue;
+  background-color:darkslategrey;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.up .down .mid{
+  display: flex;
+  justify-content: center;
+}
+
+#upbtn{
+  width: 8vh;
+  height: 8vh;
+}
+
+#downbtn{
+  width: 8vh;
+  height: 8vh;
+}
+
+#leftbtn{
+  float: left;
+  width: 8vh;
+  height: 8vh;
+}
+
+#rightbtn{
+  float: right;
+  width: 8vh;
+  height: 8vh;
+}

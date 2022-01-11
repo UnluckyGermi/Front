@@ -41,9 +41,9 @@ export class ApiService {
     return this.http.get(url, {headers: this.httpheaders});
   }
 
-  getMap():Observable<any>{
+  getMap():Observable<string[]>{
     let dir_map = this.url_engine + "map";
-    return this.http.get(dir_map, {headers: this.httpheaders});
+    return this.http.get<string[]>(dir_map, {headers: this.httpheaders});
   }
 
   getVisitors():Observable<VisitorI[]>{ //Se supone que son los usuarios registrados.

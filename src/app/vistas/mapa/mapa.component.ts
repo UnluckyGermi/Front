@@ -12,9 +12,9 @@ import { Observable } from 'rxjs';
 export class MapaComponent implements OnInit {
 
   inMap: boolean = false;
-  mapApp: string = "";
-  boolSaltoLinea: boolean = false;
   mapa2D: string[] = [];
+
+  pos: number = -1;
 
   constructor(private api:ApiService, private router:Router) { }
 
@@ -22,44 +22,25 @@ export class MapaComponent implements OnInit {
     this.api.getMap().subscribe(
       data => {
         let map = data;
-        this.mapApp = data;
-        this.inMap = true;
         
         for(let i = 0; i < map.length; i++){
-
-          /**let newName = "";
-          newName = map[i];
-          let len = newName.length;
-          console.log(newName)
-          console.log(len)
-
-          if(true){
-            console.log(len)
-            console.log(newName)
-            console.log("ALERTA")
-            this.mapa2D[i] = newName[0];
-          }
-          else{
+          let e = map[i]
+          var valores = /^[0-9]+$/;
+          if(e == null || e.match(valores)){
             this.mapa2D[i] = map[i];
-          }**/
-
-
-
-
-          this.mapa2D[i] = map[i];
+            continue;
+          }
+          if(e == localStorage.getItem("id")){
+            this.pos = i;
+          }
+          this.mapa2D[i] = map[i].charAt(0).toUpperCase();
         }
-        console.log(this.mapa2D)
       }, 
       error => {
         let err:string = error.status;
         console.log(err)
       }
     )
-  }
-
-  saltoLinea(): Boolean{
-    this.boolSaltoLinea = true;
-    return this.boolSaltoLinea
   }
 
   up(): void{
