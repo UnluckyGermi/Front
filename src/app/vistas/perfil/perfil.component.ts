@@ -41,30 +41,27 @@ export class PerfilComponent implements OnInit {
   }
 
   ProfileChangue(form: PerfilI){
-    this.api.sendChangues(form).subscribe(
-      data => {
-        if(form.NEWpassword == form.NEWpassword2 && form.NEWpassword != this.pass_visitor){
+    if(form.NEWpassword == form.NEWpassword2 && form.NEWpassword != this.pass_visitor){
 
-          localStorage.setItem("name", form.NEWname);
-          localStorage.setItem("contraseña", form.NEWpassword);
+      localStorage.setItem("name", form.NEWname);
+      localStorage.setItem("contraseña", form.NEWpassword);
 
+      this.api.sendChangues(form).subscribe(
+        data => {
           location.reload();
           this.profile = true;
           this.visible = false;
-        }
-        else{
-          this.errorStatus = true;
-          this.errorMsg = "Las contraseñas no son iguales";
-        }
-      },
-
-      error => {
+        })
+    }
+    else{
+      /**error => {
         let err:string = error.status;
         console.log(err)
         this.errorStatus = true;
         this.errorMsg = "No ha sido posible hacer los cambios";
-      }
-    )
+      }**/
+      this.errorStatus = true;
+      this.errorMsg = "Las contraseñas no son iguales";
+    }
   }
-
 }
