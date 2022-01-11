@@ -1,54 +1,28 @@
 <app-header></app-header>
-<style>
-  #centrarMapa{
-    width: 450px;
-    height: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  #centrarBotones{
-    width: 125px;
-    height: 125px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-</style>
 <body>
+  <div class="map">
 
-<div>
-
-<div id="centrarMapa">
-<table class="default">
-
-  <span class="" *ngFor="let element of mapa2D; let i = index">
-
-    <span class="" *ngIf="i%20 == 0" role="alert">
-      <br>
-    </span>
-    <span class="" *ngIf="element == null" role="alert">
-      <td>&nbsp;</td>
-    </span>
-    <span class="" *ngIf="element != null" role="alert">
-      <td>{{element}}</td>
-    </span>
-  </span>
-
-</table>
-</div>
-
-<div id="centrarBotones">
-
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <button (click)="up()"> ^ </button>
-  <br>
-  <button (click)="left()"> < </button>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <button (click)="right()"> > </button>
-  <br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <button (click)="down()"> V </button>
-
-</div>
-
-</div>
+      <div class="celda" *ngFor="let element of mapa2D; let i = index">
+        <div *ngIf="element != null"></div>
+        <div style="color:red; font-weight: bold; font-size: 3vh;"*ngIf="i == pos">
+          X
+        </div>
+        <div *ngIf="i != pos">
+          {{element}}
+        </div>
+      </div>
+      
+  </div>
+  <div class="buttons">
+    <div class="up">
+      <button id="upbtn" class="button" (click)="up()"> ↑ </button>
+    </div>
+    <div class="mid">
+      <button id="leftbtn" class="button" (click)="left()"> ← </button>
+      <button id="rightbtn" class="button" (click)="right()"> → </button>
+    </div>
+    <div class="down">
+      <button id="downbtn" class="button" (click)="down()"> ↓ </button>
+    </div>
+  </div>
 </body>

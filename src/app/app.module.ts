@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './plantillas/header/header.component';
-import { FooterComponent } from './plantillas/footer/footer.component';
 //import { LoginComponent } from './vistas/login/login.component';
 //import { MapaComponent } from './vistas/mapa/mapa.component';
 //import { RegistroComponent } from './vistas/registro/registro.component';
@@ -18,7 +17,6 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
     routingComponents
 //    PerfilComponent
 //    LoginComponent,

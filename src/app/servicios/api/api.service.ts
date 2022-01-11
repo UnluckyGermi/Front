@@ -47,9 +47,9 @@ export class ApiService {
     return this.http.get(url, {headers: this.httpheaders});
   }
 
-  getMap():Observable<any>{
+  getMap():Observable<string[]>{
     let dir_map = this.url_engine + "map";
-    return this.http.get(dir_map, {headers: this.httpheaders});
+    return this.http.get<string[]>(dir_map, {headers: this.httpheaders});
   }
 
   getWeather():Observable<any>{
